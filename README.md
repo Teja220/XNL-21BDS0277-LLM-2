@@ -1,123 +1,111 @@
-# XNL-21BDS0277-LLM-2
+# **🚀 Fine-Tuned GPT-Neo 2.7B for Question Answering**  
 
-# 🚀 **Fine-Tuned GPT-Neo 2.7B for Question Answering**
+## **📌 Project Overview**  
+This project is focused on **fine-tuning GPT-Neo 2.7B** for **question-answering tasks** using the **SQuAD v2 dataset**. The goal was to optimize the model for **faster training, lower memory usage, and improved performance** using **DeepSpeed, LoRA, and mixed precision (bf16) training**.  
 
-## 📌 **Project Overview**
-This project focuses on **fine-tuning GPT-Neo 2.7B** for **question answering tasks** using the **SQuAD v2 dataset**. The model has been optimized for **fast training, reduced memory usage, and efficient inference** using **DeepSpeed, LoRA, and bf16 mixed precision training**.
+The fine-tuned model can be used in various NLP applications, including:  
+- **Conversational AI** 🤖  
+- **Automated Q&A Systems** 📚  
+- **Information Retrieval** 🔍  
 
-The fine-tuned model can be used for various **NLP applications** such as:
-- Conversational AI 🤖  
-- Automated Question Answering 📚  
-- Information Retrieval 🔍  
+Since working with large-scale LLMs can be resource-intensive, this project focuses on **efficient fine-tuning techniques** to get the best results without requiring high-end hardware.  
 
 ---
 
-## 📋 **Requirements for Reproducing the Project**  
-To set up and run this project, the following dependencies and resources are required:
+## **📋 What You Need to Reproduce This Project**  
 
 ### **🔹 System Requirements**  
-- A **GPU-enabled environment** (Google Colab, AWS, Local with CUDA support).
-- At least **16GB VRAM recommended** for fine-tuning.
+- A **GPU-enabled setup** (Google Colab, AWS, or a local machine with CUDA).  
+- At least **16GB VRAM recommended** for fine-tuning.  
 
-### **🔹 Frameworks & Libraries**  
-- **Hugging Face Transformers** (For model loading & training)  
-- **DeepSpeed** (For optimized distributed training)  
-- **PyTorch** (For fine-tuning & inference)  
-- **PEFT (LoRA Fine-Tuning)** (For efficient adapter-based tuning)  
-- **Accelerate** (For multi-GPU and optimized training)  
-- **Weights & Biases (Optional)** (For experiment tracking)
+### **🔹 Libraries & Frameworks**  
+To fine-tune or run the model, you’ll need:  
+- **Hugging Face Transformers** – for working with GPT-Neo.  
+- **DeepSpeed** – to speed up training and reduce memory usage.  
+- **PyTorch** – for training and inference.  
+- **LoRA (Low-Rank Adaptation)** – for more efficient fine-tuning.  
+- **Accelerate** – for optimized multi-GPU training.  
+- **Weights & Biases (Optional)** – for experiment tracking.  
 
-### **🔹 Dataset**  
-- **SQuAD v2** (A high-quality dataset for QA tasks)
-- **Dataset Reduction**: Only **2% of the original dataset** was used for **ultra-fast training**.
+### **🔹 Dataset Used**  
+- **SQuAD v2** – a benchmark dataset for Question Answering.  
+- Since training on the full dataset is resource-intensive, **only 2%** was used for ultra-fast fine-tuning.  
 
-### **🔹 Storage & Model Access**  
-- The full fine-tuned model weights are **too large for GitHub**.
-- **Download the full `pytorch_model.bin`** from:  
-  🔗 **[https://colab.research.google.com/drive/1vVzHQYCJvobUpegnJ0Jowp_ZBGsJWMzR?usp=sharing]** *(Replace with actual link)*  
+### **🔹 Model Weights & Storage**  
+- The full **fine-tuned model weights** are **too large for GitHub**, so they are stored externally.  
+- **Download `pytorch_model.bin` from:**  
+  🔗 [Google Drive Link](https://colab.research.google.com/drive/1vVzHQYCJvobUpegnJ0Jowp_ZBGsJWMzR?usp=sharing)  
 
 ---
 
-## 📦 **Deliverables**
-This repository contains all the necessary files for training, evaluation, and fine-tuning of GPT-Neo 2.7B.
+## **📦 Project Deliverables**  
+This repository contains everything needed to fine-tune GPT-Neo 2.7B and reproduce the results.  
 
-### **📂 Project Files**
-- **`preprocess.py`** → Tokenizes and processes the dataset for training.  
-- **`train.py`** → Fine-tunes GPT-Neo 2.7B using DeepSpeed & LoRA.  
-- **`ds_config.json`** → DeepSpeed configuration for memory-efficient training.  
-- **`README.md`** → Documentation for setup, training, and model access.
+### **📂 Files in This Repo**  
+- **`preprocess.py`** – Tokenizes and prepares the dataset.  
+- **`train.py`** – Fine-tunes GPT-Neo 2.7B using DeepSpeed & LoRA.  
+- **`ds_config.json`** – Configuration file for DeepSpeed optimization.  
+- **`README.md`** – Documentation for setup and model access.  
 
-### **📂 Fine-Tuned Model Files**
-- **Model Configuration** (`config.json`, `tokenizer.json`, etc.).  
+### **📂 Model Files (Stored Externally)**  
+- **Model Configurations** (`config.json`, `tokenizer.json`, etc.).  
 - **LoRA Adapter Weights** (`adapter_model.safetensors`).  
 - **Tokenizer & Vocabulary** (`vocab.json`, `merges.txt`).  
 - **Training Logs & Checkpoints**.  
-
-✅ **Note:** The full model weights **(`pytorch_model.bin`) are not included** in this repo due to size limitations.  
 ---
 
-## 🚀 **Project Implementation Steps**
-### **1️⃣ Data Preprocessing**
-- Tokenized the **SQuAD v2 dataset** with a **max sequence length of 128** for faster training.
-- Used **padding & truncation** for efficient batching.
+## **🚀 How the Model Was Trained**  
 
-### **2️⃣ Fine-Tuning with DeepSpeed & LoRA**
-- **DeepSpeed Zero-Offload (Stage 2)** was used to reduce GPU memory usage.
-- **LoRA Adapters** were implemented for parameter-efficient fine-tuning.
-- **Mixed Precision Training (bf16)** was enabled to speed up computations.
+### **1️⃣ Preprocessing the Dataset**  
+- The **SQuAD v2 dataset** was tokenized with a **max sequence length of 128** for faster training.  
+- **Padding & truncation** were applied to ensure consistent input sizes.  
 
-### **3️⃣ Model Evaluation**
-- Evaluated on **2% of the SQuAD v2 validation set**.
-- Measured **accuracy, loss, and perplexity**.
+### **2️⃣ Fine-Tuning Process**  
+- Used **DeepSpeed Zero-Offload (Stage 2)** to handle large model sizes efficiently.  
+- **LoRA adapters** were applied to reduce the number of trainable parameters.  
+- **bf16 Mixed Precision** was enabled to speed up training and reduce memory usage.  
 
-### **4️⃣ Model Deployment (Optional)**
-- Model can be **converted to ONNX** or **served using FastAPI**.
-- **Deployment-ready for real-world QA applications**.
+### **3️⃣ Model Evaluation**  
+- The fine-tuned model was tested on **2% of the SQuAD v2 validation set**.  
+- Performance was measured using **accuracy, loss, and perplexity scores**.  
 
----
-
-## 📊 **Performance & Results**
-✅ **Successfully fine-tuned GPT-Neo 2.7B on SQuAD v2**  
-✅ **Integrated DeepSpeed Zero-Offload for memory efficiency**  
-✅ **Used LoRA adapters for fine-tuning with minimal memory usage**  
-✅ **Enabled mixed precision (bf16) for faster training**  
-✅ **Fine-tuned model achieves significant improvements in QA tasks**  
+### **4️⃣ Deployment Possibilities (Optional)**  
+- The model can be **converted to ONNX** for lightweight deployment.  
+- It can be **hosted using FastAPI** to serve real-time responses.  
 
 ---
 
-## 📥 **Download & Usage**
-### **🔹 How to Get the Fine-Tuned Model**
-The full fine-tuned model is available **on external storage** due to size constraints.  
-📥 **Download the full weights (`pytorch_model.bin`) from:**  
-- **Google Drive:** [Download Link] *(Replace with actual link)*  
-- **Hugging Face Model Hub:** [Model Repo Link] *(Replace with actual link)*  
+## **📊 Model Performance & Results**  
 
-### **🔹 Model Inference**
-Once downloaded, the model can be used for inference in a Python script or API.  
-- **Load the model using Hugging Face Transformers.**
-- **Provide a question + context as input** and get an answer.
+✅ Successfully fine-tuned **GPT-Neo 2.7B** on a subset of **SQuAD v2**  
+✅ Integrated **DeepSpeed Zero-Offload** for efficient memory usage  
+✅ Used **LoRA adapters** to fine-tune without retraining the full model  
+✅ Enabled **mixed precision (bf16)** to speed up training  
+✅ Achieved significant improvements in **Question Answering tasks**  
 
 ---
 
-## 🏆 **Future Improvements**
-🔹 **Further Fine-Tuning on Custom Datasets**  
-🔹 **Hyperparameter Tuning for Optimal Performance**  
-🔹 **Deployment as a Web API for Real-Time QA**  
-🔹 **Comparison with other LLMs (GPT-J, BLOOM, Falcon, etc.)**  
+## **📥 Download & Use the Fine-Tuned Model**  
+
+Since GitHub has file size limitations, **the full model weights must be downloaded separately**:  
+
+📥 **Download `pytorch_model.bin` from:**  
+- **Google Drive:** [Download Link](https://colab.research.google.com/drive/1vVzHQYCJvobUpegnJ0Jowp_ZBGsJWMzR?usp=sharing)  
 
 ---
 
-📧 For questions or contributions, reach out via:
-
-LinkedIn: https://www.linkedin.com/in/Teja220
-Email: saitejaredyy@gmail.com
-
-
-📧 **For questions or contributions, reach out via GitHub Issues or Email.**
-
-Feel free to use and modify it for research and development purposes.
+## **🏆 Future Plans for the Project**  
+🔹 Experimenting with **larger datasets for improved performance**  
+🔹 **Tuning hyperparameters** to optimize accuracy  
+🔹 **Deploying the model as a real-time API** for live Question Answering  
+🔹 **Comparing GPT-Neo’s performance with other LLMs** like GPT-J, BLOOM, Falcon  
 
 ---
 
-✅ **This README ensures that anyone can understand and reproduce your project!** 🚀🔥  
-Let me know if you need any modifications! 😊
+## **👨‍💻 Project Contributors**  
+
+- **[Bhimavarapu Saiteja Reddy](https://www.linkedin.com/in/Teja220)** – Model fine-tuning, optimization, and training.  
+
+📧 **For any questions or collaborations, feel free to reach out:**  
+- **LinkedIn:** https://www.linkedin.com/in/Teja220  
+- **Email:** saitejaredyy@gmail.com  
