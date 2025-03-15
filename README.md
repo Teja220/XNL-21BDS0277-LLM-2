@@ -1,7 +1,4 @@
 # XNL-21BDS0277-LLM-2
-Here is your complete **README.md** file for the project. It is structured professionally and includes all necessary details.
-
----
 
 # 🚀 **Fine-Tuned GPT-Neo 2.7B for Question Answering**
 
@@ -37,7 +34,7 @@ To set up and run this project, the following dependencies and resources are req
 ### **🔹 Storage & Model Access**  
 - The full fine-tuned model weights are **too large for GitHub**.
 - **Download the full `pytorch_model.bin`** from:  
-  🔗 **[Google Drive / Hugging Face Model Hub]** *(Replace with actual link)*  
+  🔗 **[https://colab.research.google.com/drive/1vVzHQYCJvobUpegnJ0Jowp_ZBGsJWMzR?usp=sharing]** *(Replace with actual link)*  
 
 ---
 
@@ -57,8 +54,6 @@ This repository contains all the necessary files for training, evaluation, and f
 - **Training Logs & Checkpoints**.  
 
 ✅ **Note:** The full model weights **(`pytorch_model.bin`) are not included** in this repo due to size limitations.  
-🔗 **Download Full Weights From:** **[Google Drive / Hugging Face]** *(Replace with actual link)*  
-
 ---
 
 ## 🚀 **Project Implementation Steps**
@@ -112,16 +107,14 @@ Once downloaded, the model can be used for inference in a Python script or API.
 
 ---
 
-## 🛠 **Project Contributors**
-- **[Your Name]** (Fine-tuning & Optimization)
-- **[Other Team Members]** (Optional)
+📧 For questions or contributions, reach out via:
+
+LinkedIn: https://www.linkedin.com/in/Teja220
+Email: saitejaredyy@gmail.com
+
 
 📧 **For questions or contributions, reach out via GitHub Issues or Email.**
 
----
-
-## 📜 **License**
-This project is open-source and available under the **MIT License**.  
 Feel free to use and modify it for research and development purposes.
 
 ---
