@@ -38,10 +38,10 @@ To fine-tune or run the model, you’ll need:
 
 ---
 
-## ** Project Deliverables**  
+## Project Deliverables  
 This repository contains everything needed to fine-tune GPT-Neo 2.7B and reproduce the results.  
 
-### **Files in This Repo**  
+### Files in This Repo
 - **`preprocess.py`** – Tokenizes and prepares the dataset.  
 - **`train.py`** – Fine-tunes GPT-Neo 2.7B using DeepSpeed & LoRA.  
 - **`ds_config.json`** – Configuration file for DeepSpeed optimization.  
@@ -98,7 +98,7 @@ Since GitHub has file size limitations, **the full model weights must be downloa
 
 ---
 
-## **Project Contributors**  
+## *Project Contributors*
 
 - **[Bhimavarapu Saiteja Reddy](https://www.linkedin.com/in/Teja220)** – Model fine-tuning, optimization, and training.  
 
