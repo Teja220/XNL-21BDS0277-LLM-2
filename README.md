@@ -69,10 +69,6 @@ This repository contains everything needed to fine-tune GPT-Neo 2.7B and reprodu
 - The fine-tuned model was tested on **2% of the SQuAD v2 validation set**.  
 - Performance was measured using **accuracy, loss, and perplexity scores**.  
 
-### **4️. Deployment Possibilities (Optional)**  
-- The model can be **converted to ONNX** for lightweight deployment.  
-- It can be **hosted using FastAPI** to serve real-time responses.  
-
 ---
 
 ## ** Model Performance & Results**  
