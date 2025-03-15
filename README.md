@@ -47,31 +47,31 @@ This repository contains everything needed to fine-tune GPT-Neo 2.7B and reprodu
 - **`ds_config.json`** – Configuration file for DeepSpeed optimization.  
 - **`README.md`** – Documentation for setup and model access.  
 
-### **Model Files (Stored Externally)**  
+### Model Files (Stored Externally)  
 - **Model Configurations** (`config.json`, `tokenizer.json`, etc.).  
 - **LoRA Adapter Weights** (`adapter_model.safetensors`).  
 - **Tokenizer & Vocabulary** (`vocab.json`, `merges.txt`).  
 - **Training Logs & Checkpoints**.  
 ---
 
-## ** How the Model Was Trained**  
+## How the Model Was Trained  
 
-### **1️. Preprocessing the Dataset**  
+### 1️. Preprocessing the Dataset 
 - The **SQuAD v2 dataset** was tokenized with a **max sequence length of 128** for faster training.  
 - **Padding & truncation** were applied to ensure consistent input sizes.  
 
-### **2️. Fine-Tuning Process**  
+### 2️. Fine-Tuning Process  
 - Used **DeepSpeed Zero-Offload (Stage 2)** to handle large model sizes efficiently.  
 - **LoRA adapters** were applied to reduce the number of trainable parameters.  
 - **bf16 Mixed Precision** was enabled to speed up training and reduce memory usage.  
 
-### **3️. Model Evaluation**  
+### 3️. Model Evaluation  
 - The fine-tuned model was tested on **2% of the SQuAD v2 validation set**.  
 - Performance was measured using **accuracy, loss, and perplexity scores**.  
 
 ---
 
-## ** Model Performance & Results**  
+## Model Performance & Results 
 
 1. Successfully fine-tuned **GPT-Neo 2.7B** on a subset of **SQuAD v2**  
 2. Integrated **DeepSpeed Zero-Offload** for efficient memory usage  
@@ -81,16 +81,16 @@ This repository contains everything needed to fine-tune GPT-Neo 2.7B and reprodu
 
 ---
 
-## **Download & Use the Fine-Tuned Model**  
+## Download & Use the Fine-Tuned Model  
 
 Since GitHub has file size limitations, **the full model weights must be downloaded separately**:  
 
-**Download `pytorch_model.bin` from:**  
+Download `pytorch_model.bin` from:  
 - **Google Drive:** [Download Link](https://colab.research.google.com/drive/1vVzHQYCJvobUpegnJ0Jowp_ZBGsJWMzR?usp=sharing)  
 
 ---
 
-## ** Future Plans for the Project**  
+## Future Plans for the Project  
 🔹 Experimenting with **larger datasets for improved performance**  
 🔹 **Tuning hyperparameters** to optimize accuracy  
 🔹 **Deploying the model as a real-time API** for live Question Answering  
